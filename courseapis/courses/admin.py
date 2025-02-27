@@ -30,6 +30,11 @@ class MyCourseAdmin(admin.ModelAdmin):
 class MyLessonAdmin(admin.ModelAdmin):
     form = LessonForm
 
+    class Media:
+        css = {
+            'all': ('/static/css/style.css',)
+        }
+
 class MyCourseAdminSite(admin.AdminSite):
     site_header = 'OU eCourse App'
 
