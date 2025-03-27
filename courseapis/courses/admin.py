@@ -5,7 +5,7 @@ from django.utils.safestring import mark_safe
 from django.db.models import Count
 from django.urls import path
 
-from .models import Category, Course, Lesson
+from .models import Category, Course, Lesson, Tag, Comment
 
 from django import forms
 from ckeditor_uploader.widgets \
@@ -52,5 +52,7 @@ class MyCourseAdminSite(admin.AdminSite):
 admin_site = MyCourseAdminSite(name='ecourse')
 
 admin_site.register(Category)
+admin_site.register(Tag)
+admin_site.register(Comment)
 admin_site.register(Course, MyCourseAdmin)
 admin_site.register(Lesson, MyLessonAdmin)
